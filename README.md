@@ -6,12 +6,12 @@ insert into emp values(3,13,TO_DATE('11-02-2002','DD-MM-YYYY'),9239878926,'ghi')
 insert into emp values(4,14,TO_DATE('18-03-2003','DD-MM-YYYY'),9237498373,'jkl');
 select * from EMP;
 
-SLNO EMP_ID      PHONE       COMPANY
+SLNO EMP_ID     DATE         PHONE       COMPANY
 ------------ ---------    ----------      --------------------
-          1 10-MAR-99      9942983420   abc
-          2 01-MAY-01      9487983463   def
-          3 11-FEB-02      9239878926   ghi
-          4 18-MAR-03      9237498373   jkl
+    1 11      10-MAR-99      9942983420   abc
+    2 12      01-MAY-01      9487983463   def
+    3 13      11-FEB-02      9239878926   ghi
+    4 14      18-MAR-03      9237498373   jkl
          
 
 SQL> desc EMP;
