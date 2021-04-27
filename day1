@@ -1,49 +1,145 @@
-#create table stocks with 5 columns
-# create table stocks with 5 columns
-
-SQL> create table stock
-  2  (
-@@ -11,7 +11,7 @@ SQL> create table stock
+create table called stock and sales with 5 columns each
+SQL> create table stock(item varchar2(20),id int,tradedate date,quantity int,price int);
 
 Table created.
 
-#create table sales with 5 columns
-# create table sales with 5 columns
+SQL> insert into stock values('A',1,TO_DATE('12-07-2020','DD-MM-YYYY'),100,500);
 
-SQL> create table sales
-  2  (
-@@ -47,7 +47,7 @@ JOIN_DATE                                           NUMBER(38)
-PHONE                                               NUMBER(38)
-DEPT                                                VARCHAR2(20)
+1 row created.
 
- display current date and time
-# display current date and time
+SQL> insert into stock values('B',2,TO_DATE('12-01-2019','DD-MM-YYYY'),10,50);
+
+1 row created.
+
+SQL> insert into stock values('C',3,TO_DATE('21-06-2017','DD-MM-YYYY'),10,100);
+
+1 row created.
+
+SQL> insert into stock values('D',4,TO_DATE('28-12-2015','DD-MM-YYYY'),40,800);
+
+1 row created.
+
+SQL> insert into stock values('E',5,TO_DATE('30-3-2000','DD-MM-YYYY'),2,200);
+
+1 row created.
+
+SQL> select * from stock;
+
+ITEM                         ID TRADEDATE   QUANTITY      PRICE
+-------------------- ---------- --------- ---------- ----------
+A                             1 12-JUL-20        100        500
+B                             2 12-JAN-19         10         50
+C                             3 21-JUN-17         10        100
+D                             4 28-DEC-15         40        800
+E                             5 30-MAR-00          2        200
+
+SQL> desc stock;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ITEM                                               VARCHAR2(20)
+ ID                                                 NUMBER(38)
+ TRADEDATE                                          DATE
+ QUANTITY                                           NUMBER(38)
+ PRICE                                              NUMBER(38)
+
+
+ SQL>  create table sales
+  2      (custname varchar(20),
+  3      custid int,
+  4      prodid int,
+  5      prodname varchar(30),
+  6     price int);
+
+Table created.
+
+SQL> insert into sales values('priya',1234,111,'Earphone',1000);
+
+1 row created.
+
+SQL> insert into sales values('indu',9876,122,'Phone',10000);
+
+1 row created.
+
+SQL> insert into sales values('nayana',9887,133,'headphone',500);
+
+1 row created.
+
+SQL> insert into sales values('meghana',9877,222,'laptop',50000);
+
+1 row created.
+
+SQL> insert into sales values('gayana',6543,678,'TV',70000);
+
+1 row created.
+
+SQL> select * from sales;
+
+CUSTNAME                 CUSTID     PRODID PRODNAME
+-------------------- ---------- ---------- ------------------------------
+     PRICE
+----------
+priya                      1234        111 Earphone
+      1000
+
+indu                       9876        122 Phone
+     10000
+
+nayana                     9887        133 headphone
+       500
+
+
+CUSTNAME                 CUSTID     PRODID PRODNAME
+-------------------- ---------- ---------- ------------------------------
+     PRICE
+----------
+meghana                    9877        222 laptop
+     50000
+
+gayana                     6543        678 TV
+     70000
+
+
+SQL> desc sales;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTNAME                                           VARCHAR2(20)
+ CUSTID                                             NUMBER(38)
+ PRODID                                             NUMBER(38)
+ PRODNAME                                           VARCHAR2(30)
+ PRICE                                              NUMBER(38)
+
+ ->display current date and time
   select to_char(sysdate,'DD/MM/YYYY hh:mi:ss') as DateTime from dual;
 
 DATETIME
-@@ -61,22 +61,22 @@ SYSDATE
----------
-26-APR-21
+-------------------
+27/04/2021 08:15:48
 
-display current date in DD/MM/YYYY format
-# display current date in DD/MM/YYYY format
-select to_char(sysdate,'DD/MM/YYYY') as "Date" from dual;
+-> display current date
+SELECT sysdate from dual;
+
+SYSDATE
+---------
+27-APR-21
+
+-> display current date in DD/MM/YYYY format
+ select to_char(sysdate,'DD/MM/YYYY') as "Date" from dual;
 
 Date
 ----------
-26/04/2021
+27/04/2021
 
-display current day as Monday
-# display current day as Monday
+->display current day as Monday
 select to_char(sysdate,'Day') as Day from dual;
 
 DAY
 ------------------------------------
-Monday
+Tuesday
 
 
-display date after 10 days from the current date
-# display date after 10 days from the current date
+-> display date after 10 days from the current date
  SELECT sysdate+10 as "Date+10" from dual;
 
 Date+10
+---------
+07-MAY-21
