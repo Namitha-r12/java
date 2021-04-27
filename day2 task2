@@ -10,8 +10,7 @@ SQL>  create table class
   7      subject char(10),
   8      unique(Day,sess,faculty),
   9      unique(day,sess,sem),
- 10     unique(day,sess,room),
- 11     unique(day,sess,faculty,sem,room));
+ 10     unique(day,sess,room));
 
 Table created.
 
