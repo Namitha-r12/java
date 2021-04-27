@@ -1,4 +1,4 @@
-#create table stocks with 5 columns
+# create table stocks with 5 columns
 
 SQL> create table stock
   2  (
@@ -11,7 +11,7 @@ SQL> create table stock
 
 Table created.
 
-#create table sales with 5 columns
+# create table sales with 5 columns
 
 SQL> create table sales
   2  (
@@ -47,7 +47,7 @@ JOIN_DATE                                           NUMBER(38)
 PHONE                                               NUMBER(38)
 DEPT                                                VARCHAR2(20)
 
- display current date and time
+# display current date and time
   select to_char(sysdate,'DD/MM/YYYY hh:mi:ss') as DateTime from dual;
 
 DATETIME
@@ -61,14 +61,14 @@ SYSDATE
 ---------
 26-APR-21
 
-display current date in DD/MM/YYYY format
+# display current date in DD/MM/YYYY format
 select to_char(sysdate,'DD/MM/YYYY') as "Date" from dual;
 
 Date
 ----------
 26/04/2021
 
-display current day as Monday
+# display current day as Monday
 select to_char(sysdate,'Day') as Day from dual;
 
 DAY
@@ -76,7 +76,7 @@ DAY
 Monday
 
 
-display date after 10 days from the current date
+# display date after 10 days from the current date
  SELECT sysdate+10 as "Date+10" from dual;
 
 Date+10
