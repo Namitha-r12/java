@@ -1,4 +1,28 @@
+#create table stocks with 5 columns
 
+SQL> create table stock
+  2  (
+  3  stockid int,
+  4  stockname varchar(50),
+  5  number_of_stocks int,
+  6  country varchar(50),
+  7  stock_date date
+  8  );
+
+Table created.
+
+#create table sales with 5 columns
+
+SQL> create table sales
+  2  (
+  3  saleid int,
+  4  cust_name varchar(50),
+  5  cust_city varchar(30),
+  6  order_no int,
+  7  sale_date date
+  8  )
+  9  ;
+# create table employee
 create table emp(slno int,emp_id int,join_date date,phone int,dept varchar(20));
 insert into emp values(1,11,TO_DATE('10-03-1999','DD-MM-YYYY'),9942983420,'abc');
 insert into emp values(2,12,TO_DATE('01-05-2001','DD-MM-YYYY'),9487983463,'def');
