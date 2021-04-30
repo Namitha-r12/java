@@ -1,0 +1,27 @@
+---create a function to check the given string contains UPPER case char or not
+class MyJava { 
+public static String hasUpper(String str)
+{
+    int count=0;
+    for(int i=0;i<str.length();i++)
+    {
+        if(str.charAt(i)>='A' && str.charAt(i)<='Z')
+        {
+            count++;
+        }
+    }
+    if(count!=0)
+    {
+        return "yes";
+    }
+    else
+    {
+        return "No";
+    }
+}
+public static void main(String args[]) 
+{ 
+       String str1="NAMITHA";
+       System.out.println(hasUpper(str1));
+}
+}
