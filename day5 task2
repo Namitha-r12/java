@@ -1,0 +1,52 @@
+---create a function to   check 2 given chars
+are equal or not irrespective of the case
+
+public class StriComp{
+public static boolean isEqual(char c1 , char c2)
+{
+	
+		if((c1 == c2)||(c1+32 == c2)||(c1-32 == c2))
+				return true;
+		else
+				return false;
+	}
+public static void main(String args[]) 
+
+{ 
+       char c1='a';
+       char c2='A';
+       StriComp striComp=new StriComp();
+       System.out.println(striComp.isEqual(c1 ,c2));
+}
+}
+
+--- create a function to   check 2 given Strings
+are equal or not irrespective of the case
+
+public class StriComp{
+boolean isEqual(String str1,String str2)
+{
+	char[] ar=str1.toCharArray();
+	char[] ar2=str2.toCharArray();
+	if(ar.length!=ar2.length)
+		return false;
+	else
+	{
+		for(int i=0;i<ar.length;++i)
+		if((ar[i] == ar2[i])||(ar[i]+32 == ar2[i])||(ar[i]-32 == ar2[i]))
+			continue;
+		else
+			return false;
+
+	}
+	return true;
+
+}
+
+public static void main(String args[]) 
+
+{ 
+       StriComp striComp=new StriComp();
+       System.out.println(striComp.isEqual("Hello","HELLO"));
+}
+}
