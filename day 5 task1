@@ -1,0 +1,106 @@
+----create a function to check the given string contains UPPER case char or not
+class UpperCase { 
+public static String hasUpper(String data)
+{
+    int count=0;
+    for(int i=0;i<data.length();i++)
+    {
+        if(data.charAt(i)>='A' && data.charAt(i)<='Z')
+        {
+            count++;
+        }
+    }
+    if(count!=0)
+    {
+        return "yes";
+    }
+    else
+    {
+        return "No";
+    }
+}
+public static void main(String args[]) 
+{ 
+       String str="Welcome";
+       System.out.println(UpperCase(str));
+}
+}
+---create a function to check the given string contains number   or not
+public class NumberCaps {
+String hasNumber(String data)
+{
+	char[] arr=data.toCharArray();
+	String res="NO";
+	for(int i=0;i<arr.length;i++)
+	{
+		char a=arr[i];
+		if((a>='0')&&(a<='9'))
+			res="YES";
+	}
+	return res;
+}
+
+public static void main(String[] args) {
+	String str="test11";
+	 NumberCaps  numberCaps=new  NumberCaps();
+	System.out.println( numberCaps.hasNumber(str));
+}
+}
+
+---- create a function to check all chars in the given string are in  UPPER case or not
+
+
+public class MyJava {
+	public static boolean isCapsOnly(String data){
+		int count=0;
+	    for(int i=0;i<data.length();i++)
+	    {
+	        char k=data.charAt(i);
+	        if(k>='A' && k<='Z')
+	        {
+	            count++;
+	        }
+	    }
+	    if(count==data.length())
+	    {
+	        return true;
+	    }
+	    else
+	    {
+	        return false;
+	    }
+	}
+	public static void main(String[] args) {
+		String str="WELCOME";
+		String str1="java";
+		MyJava myJava=new MyJava();
+		System.out.println(myJava.isCapsOnly(str));
+		System.out.println(myJava.isCapsOnly(str1));
+	}
+}
+
+
+---- create a function to count no of caps  chars in the given string
+
+
+
+public class NumberCaps {
+	int countCaps(String data){
+		char[] ar= data.toCharArray();
+		int count=0;
+		for(int i=0;i<ar.length;i++)		
+		{	
+                   
+			if(ar[i]>='A'&&ar[i]<='Z')
+			{
+				count++;
+			}
+		}
+		return count;
+		}
+		public static void main(String[] args) {
+			String str="tEst";
+			 NumberCaps  numberCaps=new  NumberCaps();
+			System.out.println( numberCaps.countCaps(str));
+		}
+	}
