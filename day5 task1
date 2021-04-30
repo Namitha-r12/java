@@ -21,7 +21,7 @@ public static String hasUpper(String str)
 }
 public static void main(String args[]) 
 { 
-       String str1="NAMITHA";
+       String str1="Namitha";
        System.out.println(hasUpper(str1));
 }
 }
