@@ -194,3 +194,11 @@ public class Turkey extends Country{
 
 }
 =================
+
+output:
+India:false
+Qatar:true
+Brazil:true
+Norway:true
+Turkey:true
+Turkey1:true
