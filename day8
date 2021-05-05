@@ -1,0 +1,103 @@
+// create showroom class which has cars in it . no duplicate car can be stored
+
+ShowRoom ,  Car ->
+name
+cars
+
+// create 2 showroom  objects ..
+
+// accept showroom name from the cmd and display cars in the showroom
+
+
+
+===================
+package test;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+
+public class ShowRoom {
+
+public static void main(String[] args) {
+	Car car1=new Car("Ecosports","Titanium","Diesel","JSP1");
+	Car car2=new Car("Maruti Suzuki ","Swift","Petrol","JSP1");
+	ArrayList<Car> JSP1Cars=new ArrayList<>();
+	
+	JSP1Cars.add(car1);
+	JSP1Cars.add(car2);
+	
+	HashSet<Car> newJSP1=new HashSet<Car>(JSP1Cars);
+	Car car3=new Car("Ecosports","SE 1.5L Ti-VCT","Petrol","JSP2");
+	Car car4=new Car("Maruti Suzuki","Baleno","Diesel","JSP2");
+	Car car5=new Car("Maruti Suzuki","Ertiga","Petrol","JSP2");
+	ArrayList<Car> JSP2Cars=new ArrayList<>();
+	JSP2Cars.add(car3);
+	JSP2Cars.add(car4);
+	JSP2Cars.add(car4);
+	HashSet<Car> newJSP2=new HashSet<Car>(JSP2Cars);
+	Map<String , HashSet<Car>> showrooms=new HashMap<String, HashSet<Car>>();
+	showrooms.put("JSP1",newJSP1);
+	showrooms.put("JSP2",newJSP2);
+	System.out.println("Enter showroom name to see the list of Cars");
+	Scanner sc=new Scanner(System.in);
+	String showroom=sc.nextLine();
+	HashSet<Car> Showroom1=showrooms.get(showroom);
+	for(Car car:Showroom1)
+	{
+		System.out.println(car);
+	}
+}
+}
+===============
+package test;
+
+public class Car{
+	private String name;
+	private String type;
+	private String fuelType;
+	private String showroomName;
+	public String getShowroomName() {
+		return showroomName;
+	}
+	public void setShowroomName(String showroomName) {
+		this.showroomName = showroomName;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getFuelType() {
+		return fuelType;
+	}
+	public void setFuelType(String fuelType) {
+		this.fuelType = fuelType;
+	
+	}
+	public Car(String name, String type, String fuelType, String showroomName) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.fuelType = fuelType;
+		this.showroomName = showroomName;
+	}
+	public Car() {
+	}
+@Override
+	public String toString() {
+		return "Car [name=" + name + ", type=" + type + ", fuelType=" + fuelType
+			+ ", showroomName=" + showroomName + "]";
+}
+}
+===========
