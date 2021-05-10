@@ -109,7 +109,7 @@ public class PlayerDao {
 
 	Connection con= DbConn.dbConnect();
 
-	String sql="update player set role=?,style=? ,team=?   where name=?";
+	String sql="update player set role=?,style=? ,team=? ,score?  where playerName=?";
 	PreparedStatement stat=con.prepareStatement(sql);
 
 
@@ -125,12 +125,11 @@ public class PlayerDao {
 	if(player.getScore()==0)
 		player.setScore(playOld.getScore());
 	
-
+	stat.setString(5, player.getPlayerName());
 	stat.setString(1,player.getRole() );
 	stat.setString(2, player.getStyle());
 	stat.setString(3, player.getTeam());
-	stat.setString(4, player.getPlayerName());
-	stat.setInt(6, player.getScore());
+	stat.setInt(4, player.getScore());
 
 	int rs= stat.executeUpdate();
 
@@ -500,7 +499,7 @@ h1   { background-color: #48d1cc;font-family:Garamond;}
 <tr><td>Player Role:</td><td><%out.print("<input type='text' name='role' value='"+ player.getRole()+"'>"); %></td></tr><br>
 <tr><td>Player Style:</td><td><%out.print("<input type='text' name='style' value='"+ player.getStyle()+"'>"); %></td></tr><br>
 <tr><td>Team:</td><td><%out.print("<input type='text' name='team' value='"+ player.getTeam()+"'>"); %></td></tr><br>
-<tr><td>Player Score:</td><td><%out.print("<input type='text' name='team' value='"+ player.getScore()+"'>"); %></td></tr><br>
+<tr><td>Player Score:</td><td><%out.print("<input type='text' name='score' value='"+ player.getScore()+"'>"); %></td></tr><br>
 </table><br>
 
 <br>
